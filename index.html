@@ -547,27 +547,93 @@ footer{
 .footer-bottom-links a:hover{color:var(--gold-light);}
 
 /* ========== RESPONSIVE ========== */
+
+/* --- Tablet / pantallas medianas --- */
 @media(max-width:960px){
-  .hero-img{width:100%;opacity:0.25;}
-  .hero-content{max-width:100%;padding:120px 5% 120px;}
+  /* Header */
+  nav{display:none;}
+  .logo-tagline{display:none;}
+
+  /* Hero */
+  .hero-img{width:100%;opacity:0.18;}
+  .hero-content{max-width:100%;padding:110px 5% 200px;}
+  .hero h1{font-size:clamp(36px,9vw,52px);}
+  .hero-sub-title{font-size:clamp(18px,4vw,24px);}
+
+  /* Grids */
   .tech-grid{grid-template-columns:1fr;gap:40px;}
   .tech-img{position:static;}
   .promo-grid{grid-template-columns:1fr;}
   .contact-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
   .garantias-grid{grid-template-columns:1fr 1fr;}
-  nav{display:none;}
+
+  /* Trust bar */
   .trust-bar{flex-wrap:wrap;}
   .trust-item{border-right:none;border-bottom:1px solid rgba(27,42,74,0.1);}
 }
+
+/* --- Mobile --- */
 @media(max-width:600px){
-  .footer-top{grid-template-columns:1fr;}
+  /* Hero stats: de flotante a estático */
+  .hero-stats{
+    position:static;
+    margin-top:36px;
+    width:100%;
+    flex-direction:row;
+    flex-wrap:wrap;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:2px;
+  }
+  .hero-content{padding:100px 5% 48px;}
+  .stat{
+    flex:1;min-width:33%;
+    border-right:1px solid rgba(255,255,255,0.1);
+    border-bottom:none;
+    padding:16px 10px;
+  }
+  .stat:last-child{border-right:none;}
+  .stat-n{font-size:22px;}
+
+  /* Hero acciones en columna */
+  .hero-actions{flex-direction:column;align-items:flex-start;gap:20px;}
+  .btn-gold{width:100%;text-align:center;}
+
+  /* Trust bar en columna */
+  .trust-bar{flex-direction:column;align-items:flex-start;padding:0;}
+  .trust-item{width:100%;padding:13px 5%;border-right:none;border-bottom:1px solid rgba(27,42,74,0.1);}
+  .trust-item:last-child{border-bottom:none;}
+
+  /* Productos: 1 columna */
+  .products-grid{grid-template-columns:1fr;}
+
+  /* Banners combos/promos: altura menor en mobile */
+  .promo-card{min-height:260px;}
+  .promo-overlay{padding:24px;}
+  .promo-title{font-size:20px;}
+
+  /* Garantías: 1 columna */
   .garantias-grid{grid-template-columns:1fr;}
+  .garantia{padding:28px 20px;}
+
+  /* Contacto */
   .form-row{grid-template-columns:1fr;}
-  .hero-stats{flex-direction:column;gap:0;}
-  .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);}
-  .stat:last-child{border-bottom:none;}
-  .social-row{flex-wrap:wrap;}
+
+  /* Redes sociales */
+  .social-row{flex-direction:column;gap:8px;}
+  .social-link{justify-content:center;width:100%;}
+
+  /* Footer */
+  .footer-top{grid-template-columns:1fr;}
+  .footer-logo{height:40px;}
+
+  /* Secciones: menos padding vertical */
+  .section{padding:64px 5%;}
+  .promo-full-content{padding:60px 5%;}
+
+  /* Títulos de sección */
+  .section-title{font-size:clamp(28px,7vw,38px);}
 }
 </style>
 </head>

@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colchones ANDARH — Tus sueños, en nuestras manos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Montserrat',sans-serif;background:#ffffff;color:#1b2a4a;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* ========== VARIABLES ========== */
+:root{
+  --navy:       #0a1622;
+  --navy-mid:   #0a1622;
+  --navy-light: #0a1622;
+  --gold:       #EFBF04;
+  --gold-light: #EFBF04;
+  --gold-pale:  #f5edd8;
+  --white:      #ffffff;
+  --off-white:  #f8f7f4;
+  --mid-gray:   #e8e6e1;
+  --text-body:  #3d4f6b;
+  --text-light: #7a8fa8;
+  --serif:      'Cormorant Garamond', Georgia, serif;
+  --sans:       'Montserrat', Arial, sans-serif;
+}
+
+/* ========== HEADER ========== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;height:80px;
+  background:rgba(27,42,74,0.97);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(184,146,42,0.18);
+  transition:all 0.3s;
+}
+.logo-area{display:flex;align-items:center;gap:14px;}
+.logo-img{height:48px;width:auto;object-fit:contain;}
+.logo-divider{width:1px;height:32px;background:rgba(255,255,255,0.2);}
+.logo-tagline{
+  font-family:var(--serif);font-size:12px;font-style:italic;
+  color:rgba(255,255,255,0.5);letter-spacing:0.5px;line-height:1.4;
+}
+nav{display:flex;align-items:center;gap:36px;}
+nav a{
+  font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.7);transition:color 0.2s;
+}
+nav a:hover{color:var(--gold-light);}
+.nav-cta{
+  font-family:var(--sans);font-size:11px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--navy)!important;background:var(--gold);
+  padding:10px 24px;border-radius:2px;transition:background 0.2s!important;
+}
+.nav-cta:hover{background:var(--gold-light)!important;}
+
+/* ========== HERO ========== */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,#0f1d35 0%,#1b2a4a 45%,#253e6b 100%);
+}
+.hero-img{
+  position:absolute;right:0;top:0;bottom:0;width:58%;
+  overflow:hidden;
+}
+.hero-img img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  opacity:0.85;
+}
+.hero-img::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:40%;
+  background:linear-gradient(90deg,#1b2a4a 0%,transparent 100%);
+  z-index:1;
+}
+.hero-content{
+  position:relative;z-index:10;
+  padding:140px 5% 160px;
+  max-width:580px;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--sans);font-size:10px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:28px;
+}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
+.hero h1{
+  font-family:var(--serif);font-size:clamp(44px,5.5vw,72px);
+  font-weight:300;color:#fff;line-height:1.1;
+  margin-bottom:10px;letter-spacing:-0.5px;
+}
+.hero h1 em{color:var(--gold-light);font-style:normal;}
+.hero-sub-title{
+  font-family:var(--serif);font-size:clamp(22px,2.5vw,32px);
+  font-weight:300;font-style:italic;color:rgba(255,255,255,0.7);
+  margin-bottom:32px;
+}
+.hero-desc{
+  font-family:var(--sans);font-size:14px;font-weight:300;
+  color:rgba(255,255,255,0.6);line-height:1.8;
+  margin-bottom:44px;max-width:400px;
+}
+.hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+.btn-gold{
+  font-family:var(--sans);font-size:11px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  background:var(--gold);color:var(--navy);
+  padding:15px 36px;border-radius:2px;
+  border:none;cursor:pointer;transition:all 0.25s;
+  display:inline-block;
+}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
+.btn-outline{
+  font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.75);
+  border-bottom:1px solid rgba(255,255,255,0.35);
+  padding-bottom:3px;cursor:pointer;
+  transition:color 0.2s,border-color 0.2s;
+}
+.btn-outline:hover{color:var(--gold-light);border-color:var(--gold);}
+.hero-stats{
+  position:absolute;bottom:40px;left:5%;
+  z-index:5;
+  display:flex;gap:0;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:2px;overflow:hidden;
+  backdrop-filter:blur(10px);
+}
+.stat{
+  padding:20px 32px;text-align:center;
+  border-right:1px solid rgba(255,255,255,0.1);
+}
+.stat:last-child{border-right:none;}
+.stat-n{
+  font-family:var(--serif);font-size:28px;font-weight:400;
+  color:var(--gold-light);display:block;line-height:1;
+}
+.stat-l{
+  font-family:var(--sans);font-size:10px;font-weight:400;
+  letter-spacing:1px;color:rgba(255,255,255,0.5);
+  display:block;margin-top:5px;
+}
+
+/* ========== TRUST BAR ========== */
+.trust-bar{
+  background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  gap:0;overflow:hidden;
+}
+.trust-item{
+  display:flex;align-items:center;gap:10px;
+  padding:16px 32px;
+  border-right:1px solid rgba(27,42,74,0.15);
+  font-family:var(--sans);font-size:11px;font-weight:600;
+  letter-spacing:0.8px;text-transform:uppercase;color:var(--navy);
+}
+.trust-item:last-child{border-right:none;}
+.trust-item svg{flex-shrink:0;}
+
+/* ========== SECCIÓN GENÉRICA ========== */
+.section{padding:100px 5%;}
+.section-bg-off{background:var(--off-white);}
+.section-bg-navy{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);
+}
+.eyebrow{
+  font-family:var(--sans);font-size:10px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:12px;margin-bottom:20px;
+}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);}
+.section-title{
+  font-family:var(--serif);font-size:clamp(32px,3.5vw,52px);
+  font-weight:300;line-height:1.15;color:var(--navy);
+  margin-bottom:20px;
+}
+.section-title.light{color:#fff;}
+.gold-rule{width:52px;height:1px;background:var(--gold);margin:24px 0;}
+.gold-rule.center{margin:24px auto;}
+.section-body{
+  font-family:var(--sans);font-size:14px;font-weight:300;
+  color:var(--text-body);line-height:1.85;max-width:540px;
+}
+.section-body.light{color:rgba(255,255,255,0.65);}
+
+/* ========== COLECCIONES ========== */
+#colecciones{background:#fff;}
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:52px;}
+.filter-btn{
+  font-family:var(--sans);font-size:10px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:9px 22px;border-radius:2px;cursor:pointer;
+  border:1px solid var(--mid-gray);background:transparent;
+  color:var(--text-light);transition:all 0.2s;
+}
+.filter-btn:hover,.filter-btn.active{
+  background:var(--navy);color:#fff;border-color:var(--navy);
+}
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:1px;background:var(--mid-gray);
+}
+.product-card{
+  background:#fff;position:relative;overflow:hidden;
+  cursor:pointer;transition:all 0.35s;
+  display:flex;flex-direction:column;
+}
+.product-card:hover .product-img img{transform:scale(1.04);}
+.product-badge-wrap{
+  position:absolute;top:20px;left:20px;z-index:3;
+  display:flex;flex-direction:column;gap:6px;
+}
+.badge{
+  font-family:var(--sans);font-size:9px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:5px 12px;border-radius:1px;display:inline-block;
+  width:fit-content;
+}
+.badge-best{background:var(--gold);color:var(--navy);}
+.badge-new{background:var(--navy);color:var(--gold-light);}
+.badge-sale{background:#c0392b;color:#fff;}
+.product-img{
+  aspect-ratio:4/3;overflow:hidden;position:relative;
+  background:var(--off-white);
+}
+.product-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.product-img-placeholder{
+  width:100%;height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:10px;
+  color:var(--text-light);
+}
+.product-img-placeholder span{
+  font-family:var(--sans);font-size:10px;letter-spacing:1px;
+  text-transform:uppercase;text-align:center;opacity:0.5;
+}
+.product-body{padding:28px 28px 24px;flex:1;display:flex;flex-direction:column;}
+.product-line{
+  font-family:var(--sans);font-size:9px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:8px;
+}
+.product-name{
+  font-family:var(--serif);font-size:22px;font-weight:400;
+  color:var(--navy);margin-bottom:10px;line-height:1.2;
+}
+.product-desc{
+  font-family:var(--sans);font-size:12px;font-weight:300;
+  color:var(--text-body);line-height:1.75;margin-bottom:18px;flex:1;
+}
+.product-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:22px;}
+.tag{
+  font-family:var(--sans);font-size:9px;font-weight:500;
+  letter-spacing:0.8px;text-transform:uppercase;
+  padding:4px 10px;border:1px solid var(--mid-gray);
+  color:var(--text-light);border-radius:1px;
+}
+.product-footer{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  padding-top:18px;border-top:1px solid var(--mid-gray);
+}
+.price-old{
+  font-family:var(--sans);font-size:11px;color:var(--text-light);
+  text-decoration:line-through;margin-bottom:3px;
+}
+.price-main{
+  font-family:var(--serif);font-size:26px;font-weight:400;color:var(--navy);
+}
+.price-note{
+  font-family:var(--sans);font-size:10px;color:var(--text-light);
+  margin-top:2px;
+}
+.btn-card{
+  font-family:var(--sans);font-size:10px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  background:var(--navy);color:#fff;
+  padding:11px 20px;border-radius:1px;border:none;cursor:pointer;
+  transition:background 0.2s;white-space:nowrap;flex-shrink:0;
+}
+.btn-card:hover{background:var(--gold);color:var(--navy);}
+
+/* ========== BANNER COMBOS ========== */
+.promo-section{padding:0 5% 80px;}
+.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--mid-gray);}
+.promo-card{
+  position:relative;overflow:hidden;cursor:pointer;
+  min-height:400px;display:flex;align-items:flex-end;
+}
+.promo-card img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;transition:transform 0.5s;
+}
+.promo-card:hover img{transform:scale(1.03);}
+.promo-overlay{
+  position:relative;z-index:2;
+  background:linear-gradient(0deg,rgba(27,42,74,0.88) 0%,rgba(27,42,74,0.3) 60%,transparent 100%);
+  width:100%;padding:36px 36px;
+}
+.promo-label{
+  font-family:var(--sans);font-size:10px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-light);
+  margin-bottom:10px;display:block;
+}
+.promo-title{
+  font-family:var(--serif);font-size:28px;font-weight:300;color:#fff;
+  margin-bottom:16px;line-height:1.2;
+}
+.promo-cta{
+  font-family:var(--sans);font-size:10px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--navy);background:var(--gold);
+  padding:10px 24px;border-radius:1px;
+  display:inline-block;transition:background 0.2s;
+}
+.promo-cta:hover{background:var(--gold-light);}
+
+/* ========== TECNOLOGÍA ========== */
+#tecnologia{background:var(--off-white);}
+.tech-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
+}
+.tech-img{
+  position:sticky;top:100px;
+  border-radius:2px;overflow:hidden;
+}
+.tech-img img{width:100%;display:block;}
+.tech-layers{display:flex;flex-direction:column;gap:0;}
+.layer{
+  display:flex;gap:20px;padding:24px 0;
+  border-bottom:1px solid var(--mid-gray);
+  transition:all 0.2s;
+}
+.layer:first-child{padding-top:0;}
+.layer:hover{padding-left:8px;}
+.layer-n{
+  font-family:var(--serif);font-size:36px;font-weight:300;
+  color:var(--gold);flex-shrink:0;line-height:1;margin-top:-4px;
+  width:40px;text-align:right;
+}
+.layer-text h4{
+  font-family:var(--sans);font-size:12px;font-weight:600;
+  letter-spacing:0.5px;color:var(--navy);margin-bottom:6px;
+}
+.layer-text p{
+  font-family:var(--sans);font-size:12px;font-weight:300;
+  color:var(--text-body);line-height:1.7;
+}
+
+/* ========== BANNER PROMOCIONES ========== */
+.promo-full{
+  position:relative;overflow:hidden;
+  min-height:560px;display:flex;align-items:center;
+}
+.promo-full-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:0.35;
+}
+.promo-full-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--navy) 0%,rgba(27,42,74,0.92) 50%,rgba(27,42,74,0.6) 100%);
+}
+.promo-full-content{
+  position:relative;z-index:2;
+  padding:80px 5%;max-width:660px;
+}
+.promo-full-content .section-title{font-size:clamp(36px,4vw,58px);}
+
+/* ========== TESTIMONIOS ========== */
+#testimonios{background:#fff;}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--mid-gray);}
+.test-card{
+  background:#fff;padding:36px;
+  transition:background 0.2s;
+}
+.test-card:hover{background:var(--off-white);}
+.stars{
+  font-size:13px;color:var(--gold);letter-spacing:3px;margin-bottom:18px;
+}
+.test-quote{
+  font-family:var(--serif);font-size:17px;font-weight:300;font-style:italic;
+  color:var(--navy);line-height:1.65;margin-bottom:24px;
+}
+.test-quote::before{content:'"\2009';color:var(--gold);}
+.test-quote::after{content:'\2009"';color:var(--gold);}
+.test-author{display:flex;align-items:center;gap:14px;}
+.test-avatar{
+  width:44px;height:44px;border-radius:50%;flex-shrink:0;
+  background:var(--navy);display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:16px;color:var(--gold-light);
+}
+.test-name{
+  font-family:var(--sans);font-size:12px;font-weight:600;color:var(--navy);
+}
+.test-city{
+  font-family:var(--sans);font-size:11px;font-weight:300;color:var(--text-light);
+  margin-top:2px;
+}
+
+/* ========== GARANTÍAS ========== */
+#garantias{background:linear-gradient(135deg,var(--navy) 0%,#1e3460 100%);}
+.garantias-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(255,255,255,0.07);margin-top:60px;
+}
+.garantia{
+  padding:44px 32px;text-align:center;
+  transition:background 0.2s;
+}
+.garantia:hover{background:rgba(184,146,42,0.1);}
+.garantia-icon{font-size:32px;margin-bottom:20px;display:block;}
+.garantia-title{
+  font-family:var(--serif);font-size:20px;font-weight:400;
+  color:#fff;margin-bottom:10px;
+}
+.garantia-desc{
+  font-family:var(--sans);font-size:12px;font-weight:300;
+  color:rgba(255,255,255,0.5);line-height:1.7;
+}
+
+/* ========== CONTACTO ========== */
+#contacto{background:var(--off-white);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-form-wrap{display:flex;flex-direction:column;gap:16px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.fgroup{display:flex;flex-direction:column;gap:6px;}
+.fgroup label{
+  font-family:var(--sans);font-size:10px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);
+}
+.fgroup input,.fgroup select,.fgroup textarea{
+  font-family:var(--sans);font-size:13px;font-weight:300;
+  color:var(--navy);background:#fff;
+  border:1px solid var(--mid-gray);border-radius:1px;
+  padding:13px 16px;outline:none;
+  transition:border-color 0.2s;-webkit-appearance:none;
+}
+.fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{
+  border-color:var(--navy);
+}
+.fgroup textarea{min-height:110px;resize:vertical;}
+.btn-submit{
+  font-family:var(--sans);font-size:11px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  background:var(--navy);color:#fff;
+  padding:15px 36px;border-radius:1px;border:none;
+  cursor:pointer;transition:all 0.2s;align-self:flex-start;
+}
+.btn-submit:hover{background:var(--gold);color:var(--navy);}
+.contact-info-wrap{}
+.contact-info-wrap h3{
+  font-family:var(--serif);font-size:34px;font-weight:300;
+  color:var(--navy);margin-bottom:14px;
+}
+.contact-info-wrap p{
+  font-family:var(--sans);font-size:13px;font-weight:300;
+  color:var(--text-body);line-height:1.8;margin-bottom:36px;
+}
+.cdetail{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px;}
+.cdetail-label{
+  font-family:var(--sans);font-size:9px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--text-light);margin-bottom:4px;
+}
+.cdetail-val{
+  font-family:var(--sans);font-size:14px;font-weight:400;color:var(--navy);
+}
+.cdetail-icon{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--navy);display:flex;align-items:center;
+  justify-content:center;font-size:16px;flex-shrink:0;margin-top:2px;
+}
+.social-row{display:flex;gap:10px;margin-top:32px;}
+.social-link{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--sans);font-size:10px;font-weight:600;
+  letter-spacing:1px;text-transform:uppercase;
+  padding:10px 16px;border:1px solid var(--mid-gray);
+  border-radius:2px;color:var(--text-body);
+  transition:all 0.2s;cursor:pointer;background:#fff;
+}
+.social-link:hover{border-color:var(--navy);color:var(--navy);background:#fff;}
+.social-link svg{width:18px;height:18px;flex-shrink:0;}
+
+/* ========== FOOTER ========== */
+footer{
+  background:linear-gradient(135deg,#0e1b30 0%,var(--navy) 100%);
+  padding:64px 5% 32px;
+  border-top:1px solid rgba(184,146,42,0.2);
+}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:52px;margin-bottom:52px;
+}
+.footer-brand{display:flex;flex-direction:column;gap:16px;}
+.footer-logo{height:52px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.9;}
+.footer-tagline{
+  font-family:var(--serif);font-size:14px;font-style:italic;
+  color:rgba(255,255,255,0.4);line-height:1.6;
+}
+.footer-col h4{
+  font-family:var(--sans);font-size:9px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);margin-bottom:18px;
+}
+.footer-col a{
+  display:block;font-family:var(--sans);font-size:13px;font-weight:300;
+  color:rgba(255,255,255,0.6);margin-bottom:11px;
+  transition:color 0.2s;
+}
+.footer-col a:hover{color:var(--gold-light);}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{
+  font-family:var(--sans);font-size:11px;font-weight:300;
+  color:rgba(255,255,255,0.3);
+}
+.footer-bottom-links{display:flex;gap:20px;}
+.footer-bottom-links a{
+  font-family:var(--sans);font-size:11px;color:rgba(255,255,255,0.3);
+  transition:color 0.2s;
+}
+.footer-bottom-links a:hover{color:var(--gold-light);}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:960px){
+  .hero-img{width:100%;opacity:0.25;}
+  .hero-content{max-width:100%;padding:120px 5% 120px;}
+  .tech-grid{grid-template-columns:1fr;gap:40px;}
+  .tech-img{position:static;}
+  .promo-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .garantias-grid{grid-template-columns:1fr 1fr;}
+  nav{display:none;}
+  .trust-bar{flex-wrap:wrap;}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(27,42,74,0.1);}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr;}
+  .garantias-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .hero-stats{flex-direction:column;gap:0;}
+  .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .stat:last-child{border-bottom:none;}
+  .social-row{flex-wrap:wrap;}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HEADER ====== -->
+<header>
+  <div class="logo-area">
+    <img class="logo-img" src="imagenes/logo.jpg" alt="Colchones Andarh">
+    <div class="logo-divider"></div>
+    <div class="logo-tagline">Tus sueños,en nuestras manos</div>
+  </div>
+  <nav>
+    <a href="#colecciones">Colecciones</a>
+    <a href="#tecnologia">Tecnología</a>
+    <a href="#ofertas">Ofertas</a>
+    <a href="#testimonios">Opiniones</a>
+    <a href="#contacto" class="nav-cta">Contáctenos</a>
+  </nav>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-img">
+    <img src="imagenes/hero-principal.jpg" alt="Colchones Andarh — Descanso de calidad">
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Catálogo 2026</div>
+    <h1>Tus sueños,<br>en <em>nuestras</em><br>manos</h1>
+    <p class="hero-sub-title">Descanso que se siente</p>
+    <p class="hero-desc">Colchones diseñados con tecnología de alta densidad, materiales premium y el compromiso de brindarte el mejor descanso de tu vida.</p>
+    <div class="hero-actions">
+      <a href="#colecciones" class="btn-gold">Explorar colecciones</a>
+      <a href="#tecnologia" class="btn-outline">Nuestra tecnología →</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-n">+15</span>
+      <span class="stat-l">Años de experiencia</span>
+    </div>
+    <div class="stat">
+      <span class="stat-n">+20K</span>
+      <span class="stat-l">Clientes satisfechos</span>
+    </div>
+    <div class="stat">
+      <span class="stat-n">5</span>
+      <span class="stat-l">Años de garantía</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TRUST BAR ====== -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    5 años de garantía
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+    Envío gratis en Bogotá
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+    30 noches de prueba
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+    Financiación disponible
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Fabricación colombiana
+  </div>
+</div>
+
+<!-- ====== COLECCIONES ====== -->
+<section class="section" id="colecciones">
+  <div class="eyebrow">Nuestro catálogo</div>
+  <h2 class="section-title">Líneas y colecciones</h2>
+  <div class="gold-rule"></div>
+  <p class="section-body" style="margin-bottom:48px;">Cada colchón Andarh es fabricado con materiales seleccionados para garantizar el soporte, el confort y la durabilidad que mereces.</p>
+
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filtrar('todos',this)">Todos</button>
+    <button class="filter-btn" onclick="filtrar('premium',this)">Premium</button>
+    <button class="filter-btn" onclick="filtrar('dark',this)">Dark Series</button>
+    <button class="filter-btn" onclick="filtrar('ortopedico',this)">Ortopédico</button>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+
+    <!-- Producto 1 -->
+    <div class="product-card" data-cat="premium ortopedico">
+      <div class="product-badge-wrap"><span class="badge badge-best">Más vendido</span></div>
+      <div class="product-img"><img src="imagenes/1.jpg" alt="Confort Premium"></div>
+      <div class="product-body">
+        <p class="product-line">Línea Premium</p>
+        <h3 class="product-name">Confort Premium®</h3>
+        <p class="product-desc">Espuma viscoelástica de alta densidad con tecnología de aislamiento de movimiento. Borde dorado reforzado y cubierta acolchada pillow top.</p>
+        <div class="product-tags">
+          <span class="tag">Viscoelástica</span><span class="tag">Pillow Top</span><span class="tag">Doble cara</span>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-old">$2.800.000</div>
+            <div class="price-main">$2.390.000</div>
+            <div class="price-note">Queen · IVA incluido</div>
+          </div>
+          <button class="btn-card" onclick="detalle('Confort Premium®')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="product-card" data-cat="premium ortopedico">
+      <div class="product-badge-wrap"><span class="badge badge-new">Nuevo</span></div>
+      <div class="product-img"><img src="imagenes/2.jpg" alt="Dreams Growing Classic"></div>
+      <div class="product-body">
+        <p class="product-line">Línea Premium</p>
+        <h3 class="product-name">Growing Classic®</h3>
+        <p class="product-desc">Diseño clean de textura diamond con borde recto. Alta resiliencia y soporte uniforme en toda la superficie de descanso.</p>
+        <div class="product-tags">
+          <span class="tag">Alta resiliencia</span><span class="tag">Textura diamond</span><span class="tag">Firme</span>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-main">$1.990.000</div>
+            <div class="price-note">Queen · IVA incluido</div>
+          </div>
+          <button class="btn-card" onclick="detalle('Growing Classic®')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="product-card" data-cat="dark">
+      <div class="product-img"><img src="imagenes/3.jpg" alt="Dark Tufted Pro"></div>
+      <div class="product-body">
+        <p class="product-line">Dark Series</p>
+        <h3 class="product-name">Dark Tufted Pro®</h3>
+        <p class="product-desc">Superficie acolchada en tufting cuadrado con fondo oscuro premium. Tecnología de capas diferenciadas para soporte postural superior.</p>
+        <div class="product-tags">
+          <span class="tag">Tufting</span><span class="tag">Postural</span><span class="tag">Premium</span>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-main">$2.650.000</div>
+            <div class="price-note">Queen · IVA incluido</div>
+          </div>
+          <button class="btn-card" onclick="detalle('Dark Tufted Pro®')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="product-card" data-cat="dark">
+      <div class="product-badge-wrap"><span class="badge badge-sale">Oferta</span></div>
+      <div class="product-img"><img src="imagenes/4.jpg" alt="Growing Dark Edition"></div>
+      <div class="product-body">
+        <p class="product-line">Dark Series</p>
+        <h3 class="product-name">Growing Dark®</h3>
+        <p class="product-desc">Diseño bicolor dark/white con tecnología hexagonal. Acabado premium en tela negra de alta resistencia con logo Andarh bordado.</p>
+        <div class="product-tags">
+          <span class="tag">Bicolor</span><span class="tag">Hexagonal</span><span class="tag">Alta resistencia</span>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-old">$2.100.000</div>
+            <div class="price-main">$1.750.000</div>
+            <div class="price-note">Queen · IVA incluido</div>
+          </div>
+          <button class="btn-card" onclick="detalle('Growing Dark®')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 5 -->
+    <div class="product-card" data-cat="dark premium">
+      <div class="product-img"><img src="imagenes/5.jpg" alt="Duo Black & Grey"></div>
+      <div class="product-body">
+        <p class="product-line">Dark Series · Especial</p>
+        <h3 class="product-name">Duo Black & Grey®</h3>
+        <p class="product-desc">Colchón doble con dos niveles de firmeza independientes. Perfecto para parejas con preferencias distintas de descanso.</p>
+        <div class="product-tags">
+          <span class="tag">Doble firmeza</span><span class="tag">Para parejas</span><span class="tag">Lujo</span>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-main">$3.800.000</div>
+            <div class="price-note">Queen · IVA incluido</div>
+          </div>
+          <button class="btn-card" onclick="detalle('Duo Black & Grey®')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 6 -->
+    <div class="product-card" data-cat="premium ortopedico">
+      <div class="product-badge-wrap"><span class="badge badge-best">Más vendido</span></div>
+      <div class="product-img"><img src="imagenes/6.jpg" alt="Élite Grand Premium"></div>
+      <div class="product-body">
+        <p class="product-line">Línea Élite</p>
+        <h3 class="product-name">Élite Grand®</h3>
+        <p class="product-desc">Nuestro modelo insignia. Pillow top ultra suave con borde dorado, sistema de resortes de bolsillo encapsulados y cubierta termorregulaodra.</p>
+        <div class="product-tags">
+          <span class="tag">Resortes pocket</span><span class="tag">Pillow top</span><span class="tag">Termorregulación</span>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-main">$4.200.000</div>
+            <div class="price-note">Queen · IVA incluido</div>
+          </div>
+          <button class="btn-card" onclick="detalle('Élite Grand®')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 7 -->
+    <div class="product-card" data-cat="dark premium">
+      <div class="product-img"><img src="imagenes/7.jpg" alt="Dark Tufted Lujo"></div>
+      <div class="product-body">
+        <p class="product-line">Dark Series · Premium</p>
+        <h3 class="product-name">Dark Tufted Lujo®</h3>
+        <p class="product-desc">Versión premium del Dark Tufted. Mayor altura, tufting profundo y espuma HR40 de alta densidad. Diseñado para el máximo descanso.</p>
+        <div class="product-tags">
+          <span class="tag">HR40</span><span class="tag">Tufting profundo</span><span class="tag">Alta densidad</span>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-main">$3.300.000</div>
+            <div class="price-note">Queen · IVA incluido</div>
+          </div>
+          <button class="btn-card" onclick="detalle('Dark Tufted Lujo®')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====== COMBOS Y PROMOCIONES ====== -->
+<section class="promo-section" id="ofertas">
+  <div class="eyebrow" style="margin-bottom:20px;">Ofertas especiales</div>
+  <h2 class="section-title" style="margin-bottom:40px;">Combos y promociones</h2>
+  <div class="promo-grid">
+    <div class="promo-card">
+      <img src="imagenes/Combos.jpg" alt="Combos Andarh">
+      <div class="promo-overlay">
+        <span class="promo-label">Combos especiales</span>
+        <p class="promo-title">Combos que se adaptan a tu bolsillo</p>
+        <a href="#contacto" class="promo-cta">Ver combos</a>
+      </div>
+    </div>
+    <div class="promo-card">
+      <img src="imagenes/Promociones.jpg" alt="Promociones Andarh">
+      <div class="promo-overlay">
+        <span class="promo-label">Hasta 30% descuento</span>
+        <p class="promo-title">Promociones por tiempo limitado</p>
+        <a href="#contacto" class="promo-cta">Aprovechar ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TECNOLOGÍA ====== -->
+<section class="section" id="tecnologia" style="background:var(--off-white);">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+    <div>
+      <div class="eyebrow">Innovación</div>
+      <h2 class="section-title">Tecnología de capas que transforma el sueño</h2>
+      <div class="gold-rule"></div>
+      <p class="section-body" style="margin-bottom:44px;">Cada colchón Andarh está construido capa a capa con materiales de ingeniería avanzada para ofrecerte soporte, frescura y durabilidad por años.</p>
+      <div class="tech-layers">
+        <div class="layer">
+          <div class="layer-n">1</div>
+          <div class="layer-text">
+            <h4>Memory Foam termorregulador</h4>
+            <p>Cubierta de espuma viscoelástica que absorbe y distribuye el calor corporal, manteniendo una temperatura de sueño ideal toda la noche.</p>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="layer-n">2</div>
+          <div class="layer-text">
+            <h4>Espuma Tecnodorm High Density</h4>
+            <p>Capa de transición de alta densidad que elimina los puntos de presión y adapta el soporte a la geometría de tu cuerpo.</p>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="layer-n">3</div>
+          <div class="layer-text">
+            <h4>Espuma Tecnodorm Politex</h4>
+            <p>Núcleo de espuma HR con alta resiliencia que recupera su forma noche tras noche, manteniendo el soporte original por años.</p>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="layer-n">4</div>
+          <div class="layer-text">
+            <h4>Unidad resortada Pocket</h4>
+            <p>Sistema de resortes encapsulados individualmente que se adaptan punto a punto, aislando el movimiento y garantizando soporte perimetral.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="position:sticky;top:100px;">
+      <img src="imagenes/Tecnologia.jpg" alt="Capas de tecnología Andarh" style="width:100%;border-radius:2px;display:block;">
+    </div>
+  </div>
+</section>
+
+<!-- ====== BANNER FULL PROMOCIÓN ====== -->
+<section class="promo-full">
+  <img class="promo-full-img" src="imagenes/hero-principal2.jpg" alt="Promoción Andarh">
+  <div class="promo-full-bg"></div>
+  <div class="promo-full-content">
+    <div class="eyebrow">Oferta especial</div>
+    <h2 class="section-title light">Hasta 25% de descuento en colchones seleccionados</h2>
+    <div class="gold-rule"></div>
+    <p class="section-body light" style="margin-bottom:40px;">Aprovecha nuestra promoción de temporada. Envío e instalación gratis en Bogotá, retiro de tu colchón viejo sin costo adicional.</p>
+    <a href="#contacto" class="btn-gold">Solicitar oferta</a>
+  </div>
+</section>
+
+<!-- ====== TESTIMONIOS ====== -->
+<section class="section" id="testimonios">
+  <div style="text-align:center;margin-bottom:56px;">
+    <div class="eyebrow" style="justify-content:center;">Clientes reales</div>
+    <h2 class="section-title" style="text-align:center;">Lo que dicen quienes ya descansan mejor</h2>
+    <div class="gold-rule center"></div>
+  </div>
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="test-quote">Llevaba años con dolor de espalda y desde el primer mes con mi Andarh la diferencia es increíble. Mi médico también notó la mejoría.</p>
+      <div class="test-author">
+        <div class="test-avatar">MR</div>
+        <div>
+          <div class="test-name">María R.</div>
+          <div class="test-city">Bogotá, Colombia</div>
+        </div>
+      </div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="test-quote">El proceso de entrega fue impecable. Llegaron a tiempo, instalaron el colchón en mi cuarto y se llevaron el viejo. La calidad superó mis expectativas.</p>
+      <div class="test-author">
+        <div class="test-avatar">JP</div>
+        <div>
+          <div class="test-name">Jorge P.</div>
+          <div class="test-city">Medellín, Colombia</div>
+        </div>
+      </div>
+    </div>
+    <div class="test-card">
+      <div class="stars">★★★★★</div>
+      <p class="test-quote">Compramos el Élite Grand para nuestra alcoba. Es una inversión pero vale cada peso. El sueño desde la primera noche fue completamente diferente.</p>
+      <div class="test-author">
+        <div class="test-avatar">CA</div>
+        <div>
+          <div class="test-name">Claudia A.</div>
+          <div class="test-city">Cali, Colombia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== GARANTÍAS ====== -->
+<section class="section" id="garantias">
+  <div style="text-align:center;">
+    <div class="eyebrow" style="justify-content:center;">Tu tranquilidad primero</div>
+    <h2 class="section-title light" style="text-align:center;">Compramos con confianza</h2>
+    <div class="gold-rule center"></div>
+    <p class="section-body light" style="margin:0 auto;text-align:center;">Cada colchón Andarh viene respaldado por nuestra promesa de calidad total.</p>
+  </div>
+  <div class="garantias-grid">
+    <div class="garantia">
+      <span class="garantia-icon">🛡️</span>
+      <div class="garantia-title">5 años de garantía</div>
+      <div class="garantia-desc">Cobertura total contra defectos de fabricación y deterioro prematuro.</div>
+    </div>
+    <div class="garantia">
+      <span class="garantia-icon">🌙</span>
+      <div class="garantia-title">30 noches de prueba</div>
+      <div class="garantia-desc">Si no quedas satisfecho en los primeros 30 días, te cambiamos el colchón.</div>
+    </div>
+    <div class="garantia">
+      <span class="garantia-icon">🚚</span>
+      <div class="garantia-title">Entrega gratuita</div>
+      <div class="garantia-desc">Instalación en tu habitación y retiro del colchón anterior sin costo extra en Bogotá.</div>
+    </div>
+    <div class="garantia">
+      <span class="garantia-icon">💳</span>
+      <div class="garantia-title">Hasta 36 cuotas</div>
+      <div class="garantia-desc">Financiación disponible con las principales tarjetas y entidades bancarias.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONTACTO ====== -->
+<section class="section" id="contacto" style="background:var(--off-white);">
+  <div class="contact-grid">
+    <div>
+      <div class="eyebrow">Contáctenos</div>
+      <h2 class="section-title">¿Tienes alguna pregunta?</h2>
+      <div class="gold-rule"></div>
+      <p class="section-body" style="margin-bottom:36px;">Cuéntanos qué buscas y un asesor te contactará en menos de 24 horas.</p>
+      <form class="contact-form-wrap" onsubmit="enviarForm(event)">
+        <div class="form-row">
+          <div class="fgroup">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre completo">
+          </div>
+          <div class="fgroup">
+            <label>Teléfono / WhatsApp</label>
+            <input type="tel" placeholder="300 000 0000">
+          </div>
+        </div>
+        <div class="fgroup">
+          <label>Correo electrónico</label>
+          <input type="email" placeholder="tu@correo.com">
+        </div>
+        <div class="fgroup">
+          <label>Producto de interés</label>
+          <select>
+            <option value="">— Selecciona un modelo —</option>
+            <option>Confort Premium®</option>
+            <option>Growing Classic®</option>
+            <option>Dark Tufted Pro®</option>
+            <option>Growing Dark®</option>
+            <option>Duo Black & Grey®</option>
+            <option>Élite Grand®</option>
+            <option>Dark Tufted Lujo®</option>
+            <option>Combos y promociones</option>
+            <option>Necesito asesoría personalizada</option>
+          </select>
+        </div>
+        <div class="fgroup">
+          <label>Mensaje (opcional)</label>
+          <textarea placeholder="¿Cuál es tu tipo de descanso ideal? ¿Tienes alguna condición especial?"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar consulta →</button>
+      </form>
+    </div>
+    <div class="contact-info-wrap">
+      <h3>Visítanos o llámanos</h3>
+      <p>Estamos en Colombia con atención personalizada. También ofrecemos asesoría virtual por videollamada o WhatsApp.</p>
+      <div class="cdetail">
+        <div class="cdetail-icon">📍</div>
+        <div>
+          <div class="cdetail-label">Dirección principal</div>
+          <div class="cdetail-val">📌 Tu dirección aquí</div>
+        </div>
+      </div>
+      <div class="cdetail">
+        <div class="cdetail-icon">📞</div>
+        <div>
+          <div class="cdetail-label">Teléfono / WhatsApp</div>
+          <div class="cdetail-val">317 454 9468</div>
+        </div>
+      </div>
+      <div class="cdetail">
+        <div class="cdetail-icon">✉️</div>
+        <div>
+          <div class="cdetail-label">Correo electrónico</div>
+          <div class="cdetail-val">manofacturasandarh.colchones@gmail.com </div>
+        </div>
+      </div>
+      <div class="cdetail">
+        <div class="cdetail-icon">🕐</div>
+        <div>
+          <div class="cdetail-label">Horario de atención</div>
+          <div class="cdetail-val">Lunes a sábado · 8 a.m. – 7 p.m.</div>
+        </div>
+      </div>
+      <div class="social-row">
+        <!-- WhatsApp -->
+        <a class="social-link" href="https://wa.me/message/WT5C5EPMBZDFC1" target="_blank">
+          <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <!-- Instagram -->
+        <a class="social-link" href="https://www.instagram.com/colchonesandarh?utm_source=qr&igsh=ZTN6aWx1cG50YTB1" target="_blank">
+          <svg viewBox="0 0 24 24" fill="url(#ig-grad)">
+            <defs>
+              <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f09433"/>
+                <stop offset="25%" stop-color="#e6683c"/>
+                <stop offset="50%" stop-color="#dc2743"/>
+                <stop offset="75%" stop-color="#cc2366"/>
+                <stop offset="100%" stop-color="#bc1888"/>
+              </linearGradient>
+            </defs>
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          Instagram
+        </a>
+        <!-- Facebook -->
+        <a class="social-link" href="https://www.facebook.com/share/1E41J5ECTS/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img class="footer-logo" src="imagenes/logo.jpg" alt="Colchones Andarh">
+      <p class="footer-tagline">Tus sueños, en nuestras manos.<br>Fabricación colombiana de alta calidad.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Colecciones</h4>
+      <a href="#">Línea Premium</a>
+      <a href="#">Dark Series</a>
+      <a href="#">Línea Élite</a>
+      <a href="#">Combos</a>
+      <a href="#">Promociones</a>
+    </div>
+    <div class="footer-col">
+      <h4>La empresa</h4>
+      <a href="#">Sobre nosotros</a>
+      <a href="#">Nuestra tecnología</a>
+      <a href="#">Sostenibilidad</a>
+      <a href="#">Trabaja con nosotros</a>
+    </div>
+    <div class="footer-col">
+      <h4>Soporte</h4>
+      <a href="#">Garantías</a>
+      <a href="#">Preguntas frecuentes</a>
+      <a href="#">Política de devoluciones</a>
+      <a href="#">Contacto</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Colchones Andarh. Todos los derechos reservados.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Política de privacidad</a>
+      <a href="#">Términos y condiciones</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function filtrar(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card => {
+    const cats = card.dataset.cat || '';
+    card.style.display = (cat === 'todos' || cats.includes(cat)) ? '' : 'none';
+  });
+}
+function detalle(nombre) {
+  document.getElementById('contacto').scrollIntoView({behavior:'smooth'});
+}
+function enviarForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  btn.textContent = '✅ ¡Mensaje enviado! Te contactaremos pronto.';
+  btn.disabled = true;
+  btn.style.background = 'var(--gold)';
+  btn.style.color = 'var(--navy)';
+}
+// Header scroll efecto
+window.addEventListener('scroll', () => {
+  document.querySelector('header').style.height = 
+    window.scrollY > 80 ? '64px' : '80px';
+});
+</script>
+</body>
+</html>

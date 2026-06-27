@@ -337,14 +337,18 @@ nav a:hover{color:var(--gold-light);}
 /* ========== TECNOLOGÍA ========== */
 #tecnologia{background:var(--off-white);}
 .tech-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:start;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
 }
+.tech-text{order:2;}
 .tech-img{
   position:sticky;top:100px;
+  order:1;
   border-radius:2px;overflow:hidden;
 }
-.tech-img img{width:100%;display:block;}
+.tech-img img{width:100%;display:block;border-radius:2px;}
 .tech-layers{display:flex;flex-direction:column;gap:0;}
 .layer{
   display:flex;gap:20px;padding:24px 0;
@@ -561,8 +565,9 @@ footer{
   .hero-sub-title{font-size:clamp(18px,4vw,24px);}
 
   /* Grids */
-  .tech-grid{grid-template-columns:1fr;gap:40px;}
-  .tech-img{position:static;}
+  .tech-grid{grid-template-columns:1fr;gap:32px;}
+  .tech-img{position:static;order:1;}
+  .tech-text{order:2;}
   .promo-grid{grid-template-columns:1fr;}
   .contact-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
@@ -902,8 +907,8 @@ footer{
 
 <!-- ====== TECNOLOGÍA ====== -->
 <section class="section" id="tecnologia" style="background:var(--off-white);">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
-    <div>
+  <div class="tech-grid">
+    <div class="tech-text">
       <div class="eyebrow">Innovación</div>
       <h2 class="section-title">Tecnología de capas que transforma el sueño</h2>
       <div class="gold-rule"></div>
@@ -939,8 +944,8 @@ footer{
         </div>
       </div>
     </div>
-    <div style="position:sticky;top:100px;">
-      <img src="imagenes/Tecnologia.jpg" alt="Capas de tecnología Andarh" style="width:100%;border-radius:2px;display:block;">
+    <div class="tech-img">
+      <img src="imagenes/Tecnologia.jpg" alt="Capas de tecnología Andarh">
     </div>
   </div>
 </section>
